@@ -13,6 +13,7 @@ This repository is Tofu's copy of **xp4u1/memoria** (licence: AGPL-3.0), listed 
 - Everyone who opens the copy's address gets their own empty diary in their own browser. The owner's entries are never visible to anyone else, and nobody else's reach the owner.
 - Another browser, another device or a private window shows a different, empty diary.
 - Clearing the site's data (or a browser that clears it by itself) deletes the diary, and the app has no export.
+- **Safari clears it by itself.** On an iPhone, iPad or Mac, Safari deletes a site's stored data after seven days of Safari use without using that site, so a diary left unopened for that long is gone. On an iPhone or iPad, add the copy to the Home Screen first (Share, then **Add to Home Screen**, with **Open as Web App** on) and write only from that icon: WebKit counts a Home Screen app's days by its own use, not Safari's, and does not expect its data to be deleted. It keeps its own diary, apart from Safari's, so entries written in Safari do not appear in it.
 - The pages say so: the footer of the home page and the top of **Settings** read "Your diary is kept only in this browser. Nothing is shared or sent to a server, and clearing this site's data deletes it." in each of the app's four languages.
 
 ## How Tofu runs it
