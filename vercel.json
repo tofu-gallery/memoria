@@ -1,0 +1,9 @@
+{
+  "installCommand": "npm ci --ignore-scripts --no-audit --no-fund",
+  "rewrites": [
+    { "source": "/home", "destination": "/index.html" },
+    { "source": "/database", "destination": "/index.html" },
+    { "source": "/settings", "destination": "/index.html" },
+    { "source": "/writer/:id", "destination": "/index.html" }
+  ]
+}
