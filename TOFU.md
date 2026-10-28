@@ -27,7 +27,7 @@ This repository is Tofu's copy of **xp4u1/memoria** (licence: AGPL-3.0), listed 
 
 ## Source code link
 
-- **Setting:** `VITE_SOURCE_URL`, read when the app is built (`src/sourceCode.ts`). When it is unset, empty or not an `http(s)` address, the links open `https://github.com/tofu-gallery/memoria/tree/pin/2026-10-28`. When Tofu's gallery copies this app into an account, it saves `VITE_SOURCE_URL` as `https://github.com/tofu-gallery/memoria/tree/<commit>`, the exact version that copy runs.
+- **Setting:** `VITE_SOURCE_URL`, read when the app is built (`src/sourceCode.ts`). When it is unset, empty or not an `http(s)` address, the links open `https://github.com/tofu-gallery/memoria/tree/pin/2026-10-28.1`. When Tofu's gallery copies this app into an account, it saves `VITE_SOURCE_URL` as `https://github.com/tofu-gallery/memoria/tree/<commit>`, the exact version that copy runs.
 - **What it shows:** a **Source code** link in the footer of the home page, which is the first page anyone sees, and at the bottom of **Settings**, next to the licence's name. There is no sign-in, so everyone who opens the copy can reach it.
 - **If you change the code:** publish your changed source where anyone can read it and set `VITE_SOURCE_URL` to that address, then deploy again. AGPL-3.0 section 13 asks that everyone who uses the app can get the source of the version they use.
 
@@ -56,7 +56,7 @@ Left as upstream wrote them: the app's code and pages otherwise, `readme.md` (it
 
 ## Licence
 
-AGPL-3.0, in `license`, kept as it is with every copyright line. Each source file Tofu changed or added carries a dated note saying so (`vite.config.ts`, `vitest.config.ts`, `src/sourceCode.ts`, `src/vite-env.d.ts`, `src/pages/Home.tsx`, `src/pages/Home.scss`, `src/pages/Settings.tsx`, `src/pages/Settings.scss`, `src/pages/Writer.scss`); the JSON files cannot hold a comment and are listed here instead: `package.json`, `package-lock.json`, `vercel.json` (new) and the four `locales/*/translation.json`. The name **memoria** and its icons are the upstream author's. The Inter font is bundled from `@fontsource/inter` (SIL Open Font License 1.1) and the icons from Ionicons (MIT). The modified source of what Tofu hosts is this public repository at the tag the gallery pins on the `tofu` branch, `pin/2026-10-28`, and each copy's **Source code** link opens the exact commit it was made from.
+AGPL-3.0, in `license`, kept as it is with every copyright line. Each source file Tofu changed or added carries a dated note saying so (`vite.config.ts`, `vitest.config.ts`, `src/sourceCode.ts`, `src/vite-env.d.ts`, `src/pages/Home.tsx`, `src/pages/Home.scss`, `src/pages/Settings.tsx`, `src/pages/Settings.scss`, `src/pages/Writer.scss`); the JSON files cannot hold a comment and are listed here instead: `package.json`, `package-lock.json`, `vercel.json` (new) and the four `locales/*/translation.json`. The name **memoria** and its icons are the upstream author's. The Inter font is bundled from `@fontsource/inter` (SIL Open Font License 1.1) and the icons from Ionicons (MIT). The modified source of what Tofu hosts is this public repository at the tag the gallery pins on the `tofu` branch, `pin/2026-10-28.1` (the first, `pin/2026-10-28`, is kept), and each copy's **Source code** link opens the exact commit it was made from.
 
 ## Verification
 
