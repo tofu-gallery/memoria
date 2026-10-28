@@ -1,8 +1,11 @@
+// Modified by Tofu on 2026-10-28 (AGPL-3.0 section 5): more room under the text, so the round
+// save button, which floats over the bottom of the page, no longer covers a long entry's last line.
 #writerPage .container {
   display: flex;
   flex-flow: column;
   align-items: center;
   padding: calc(env(safe-area-inset-top) + 2rem) 1rem;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 5rem);
 
   ion-textarea {
     --highlight-height: unset;
