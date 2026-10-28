@@ -1,3 +1,4 @@
+// Modified by Tofu on 2026-10-28 (AGPL-3.0 section 5): styles for the home page's footer.
 @use "../styles/alert";
 
 #homePage #container {
@@ -111,8 +112,25 @@
 
     &#settingsLink {
       margin-top: auto;
-      padding-bottom: 25px;
+      padding-top: 25px;
       font-size: 0.8rem;
+    }
+  }
+
+  footer#homeFooter {
+    max-width: 500px;
+    padding-bottom: calc(env(safe-area-inset-bottom) + 20px);
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-light);
+
+    p {
+      margin: 0.8rem 0 0.4rem;
+      line-height: 1.4;
+    }
+
+    a {
+      text-decoration: underline;
     }
   }
 }

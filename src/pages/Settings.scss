@@ -1,3 +1,4 @@
+// Modified by Tofu on 2026-10-28 (AGPL-3.0 section 5): the source code link's colour.
 @use "../styles/toast";
 
 #settingsPage #container {
@@ -9,5 +10,9 @@
 
   p.muted {
     color: var(--text-light);
+
+    a {
+      color: inherit;
+    }
   }
 }

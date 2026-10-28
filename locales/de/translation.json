@@ -45,6 +45,7 @@
   "September": "September",
   "Server": "Server",
   "Settings": "Einstellungen",
+  "Source code": "Quellcode",
   "Start synchronization": "Synchronisierung starten",
   "Sun": "So",
   "Sunday": "Sonntag",
@@ -61,5 +62,6 @@
   "Wed": "Mi",
   "Wednesday": "Mittwoch",
   "What happened today?": "Was ist heute passiert?",
-  "Write something...": "Schreibe etwas..."
+  "Write something...": "Schreibe etwas...",
+  "Your diary is kept only in this browser. Nothing is shared or sent to a server, and clearing this site's data deletes it.": "Dein Tagebuch wird nur in diesem Browser gespeichert. Nichts wird geteilt oder an einen Server gesendet, und wenn du die Daten dieser Website löschst, ist es weg."
 }

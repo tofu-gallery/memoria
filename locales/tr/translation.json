@@ -44,6 +44,7 @@
   "September": "Eylül",
   "Server": "Sunucu",
   "Settings": "Ayarlar",
+  "Source code": "Kaynak kodu",
   "Start synchronization": "Senkronizasyonu başlat",
   "Sun": "Paz",
   "Sunday": "Pazar",
@@ -60,5 +61,6 @@
   "Wed": "Çar",
   "Wednesday": "Çarşamba",
   "What happened today?": "Bugün ne oldu?",
-  "Write something...": "Bir şeyler yaz..."
+  "Write something...": "Bir şeyler yaz...",
+  "Your diary is kept only in this browser. Nothing is shared or sent to a server, and clearing this site's data deletes it.": "Günlüğün yalnızca bu tarayıcıda saklanır. Hiçbir şey paylaşılmaz ya da bir sunucuya gönderilmez; bu sitenin verilerini silersen günlüğün de silinir."
 }

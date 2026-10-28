@@ -45,6 +45,7 @@
   "September": "September",
   "Server": "Server",
   "Settings": "Settings",
+  "Source code": "Source code",
   "Start synchronization": "Start synchronization",
   "Sun": "Sun",
   "Sunday": "Sunday",
@@ -61,5 +62,6 @@
   "Wed": "Wed",
   "Wednesday": "Wednesday",
   "What happened today?": "What happened today?",
-  "Write something...": "Write something..."
+  "Write something...": "Write something...",
+  "Your diary is kept only in this browser. Nothing is shared or sent to a server, and clearing this site's data deletes it.": "Your diary is kept only in this browser. Nothing is shared or sent to a server, and clearing this site's data deletes it."
 }

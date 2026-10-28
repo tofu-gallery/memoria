@@ -1,3 +1,5 @@
+// Modified by Tofu on 2026-10-28 (AGPL-3.0 section 5): a footer that says where the
+// diary is kept, and a "Source code" link (src/sourceCode.ts).
 import {
   IonAlert,
   IonContent,
@@ -15,6 +17,7 @@ import "./Home.scss";
 import WeekView from "../components/WeekView";
 import { generateMemoryID, generateReflectionID } from "../data/entry";
 import { startLiveSync } from "../data/sync";
+import { sourceCodeUrl } from "../sourceCode";
 
 const getGreeting = () => {
   const hours = new Date().getHours();
@@ -196,6 +199,17 @@ const Home: React.FC = () => {
           <Link id="settingsLink" to="/settings">
             {t("Settings")}
           </Link>
+
+          <footer id="homeFooter">
+            <p>
+              {t(
+                "Your diary is kept only in this browser. Nothing is shared or sent to a server, and clearing this site's data deletes it.",
+              )}
+            </p>
+            <a href={sourceCodeUrl} target="_blank" rel="noopener noreferrer">
+              {t("Source code")}
+            </a>
+          </footer>
         </div>
       </IonContent>
     </IonPage>

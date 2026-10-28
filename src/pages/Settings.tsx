@@ -1,3 +1,5 @@
+// Modified by Tofu on 2026-10-28 (AGPL-3.0 section 5): a paragraph that says where the
+// diary is kept, and a "Source code" link (src/sourceCode.ts).
 import {
   IonBackButton,
   IonButtons,
@@ -24,6 +26,7 @@ import {
   syncDatabase,
 } from "../data/remote";
 import { getLastSync, setLastSync } from "../data/sync";
+import { sourceCodeUrl } from "../sourceCode";
 
 const Settings: React.FC = () => {
   const { t } = useTranslation();
@@ -144,6 +147,14 @@ const Settings: React.FC = () => {
       <IonContent fullscreen>
         <div id="container">
           <p>
+            <b>
+              {t(
+                "Your diary is kept only in this browser. Nothing is shared or sent to a server, and clearing this site's data deletes it.",
+              )}
+            </b>
+          </p>
+
+          <p>
             {t(
               "Memoria can connect to any CouchDB-compatible database. This is optional; the app works without a database connection. However, a backup is recommended.",
             )}
@@ -199,6 +210,13 @@ const Settings: React.FC = () => {
               </p>
             )}
           </IonList>
+
+          <p className="muted">
+            <a href={sourceCodeUrl} target="_blank" rel="noopener noreferrer">
+              {t("Source code")}
+            </a>{" "}
+            · AGPL-3.0
+          </p>
         </div>
       </IonContent>
     </IonPage>
