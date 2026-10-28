@@ -60,21 +60,22 @@ AGPL-3.0, in `license`, kept as it is with every copyright line. Each source fil
 
 ## Verification
 
-Run on 2026-10-28 on macOS (Apple silicon) with Node 22.22.3 and npm 10.9.8. Nothing was deployed.
+Run on 2026-10-28 on macOS (Apple silicon) with Node 22.22.3 and npm 10.9.8, on commit `810e8ba` (the code of this pin: the commit after it changes only this file). Nothing was deployed.
 
-1. **Files as Tofu delivers them:** `git archive tofu | tar -x` into a new folder, then `find . -type f -exec chmod a-x {} +` (Tofu's import keeps no file modes). Nothing in the build runs a repository file directly.
-2. **Install:** `npm ci --ignore-scripts --no-audit --no-fund --registry=https://registry.npmjs.org` (the static build's own flags): 929 packages, deprecation warnings only.
-3. **Build:** `npm run build --ignore-scripts`: `tsc` passed and `vite build` wrote `dist/` (85 files, 2.7 MB) with one warning, upstream's own (the main script is larger than 500 kB). The same build from the working tree gave the same main script. A build with `VITE_SOURCE_URL=https://github.com/tofu-gallery/memoria/tree/<40 hex>` carries that address. `npx vitest run`: 1 file, 4 tests passed.
-4. **Serve:** `dist/` on 127.0.0.1 behind a small server that answers paths the way Tofu's static hosting does (the file, else `index.html` for a page visit). `/`, `/home`, `/database`, `/settings` and `/writer/<entry>` answered 200 with the app; a missing file answered 404.
-5. **Browser** (headless Chromium 156, 127.0.0.1 only), at 390 by 844 (a phone, touch) and at 1200 by 750: the lock page passed on to the home page; the footer showed the sentence and the **Source code** link to the pin; a reflection for the day and a titled memory were written and saved; **Open database** listed both; after a reload both were still there; the reflection read back in the writer; **Settings** showed the sentence and the link, with no sync server set (`remote_address`, `remote_username` and `remote_password` all null); no page errors, no request left 127.0.0.1, and no page overflowed sideways at either size.
-6. **Tofu's own checks** (`lane_check_r9.mts` on the QA checkout of Tofu's `main`, which imports the branch as the GitHub import does): `build: eligible` for the static lane, `safety ok (0 findings)`, 68 of 500 published files.
-7. **Live check script:** `live-check.py` (kept with the gallery's QA notes) against the local server: `RESULT PASS`.
+1. **Files as Tofu delivers them:** `git archive 810e8ba | tar -x` into a new folder, then `find . -type f -exec chmod a-x {} +` (Tofu's import keeps no file modes). Nothing in the build runs a repository file directly.
+2. **Install:** `npm ci --ignore-scripts --no-audit --no-fund --registry=https://registry.npmjs.org` (the static build's own command; `vercel.json` names the same one for server hosting): 929 packages, deprecation warnings only.
+3. **Build:** `npm run build --ignore-scripts`: `tsc` passed and `vite build` wrote `dist/` (85 files, 2.7 MB, `vercel.json` not among them) with one warning, upstream's own (the main script is larger than 500 kB). Without `VITE_SOURCE_URL` the links open `pin/2026-10-28.1`; built with `VITE_SOURCE_URL=https://github.com/tofu-gallery/memoria/tree/810e8baca1f1e1c94c4c074c4114c942cc551d7f`, as a gallery copy is, they open that address. `npx vitest run`: 1 file, 4 tests passed.
+4. **Serve, both ways:** `dist/` on 127.0.0.1 behind two small servers. One answers paths the way Tofu's static hosting does (the file, else `index.html` for a page visit); the other the way server hosting does with this `vercel.json` (the file, else one of its four rewrites, else 404). On both, `/`, `/home`, `/database`, `/settings` and `/writer/<entry>` answered 200 with the app, and a missing file answered 404.
+5. **Browser** (headless Chromium from Playwright 1.64, 127.0.0.1 only), on each server, at 390 by 844 (a phone, touch) and at 1200 by 750: the lock page passed on to the home page; the footer showed the sentence and the **Source code** link; a 41-line reflection scrolled to its end ended above the round save button (on the phone, its last line's bottom at 756 px and the button's top at 786 px); a titled memory was saved; `/database`, `/home`, `/settings` and the reflection's `/writer/<entry>`, each opened by its own address, showed the app; the list showed both entries and the reflection read back whole; **Settings** showed the sentence about where the diary is kept, the new sync paragraph, the link, and no sync server, user or password set; with the browser in German, **Settings** showed the German sentences. No page errors, no request left 127.0.0.1, and no page overflowed sideways.
+6. **Tofu's own checks** (`lane_check_r9.mts` on a checkout of Tofu's `main`, which imports the branch as the GitHub import does): `static (Tofu builds it)`, `build: eligible`, `safety ok (0 findings)`, 69 of 500 publishable files in the source (the built site is the 85 files above).
+7. **Live check script:** `live-check.py` (kept with the gallery's QA notes) against both local servers, with the commit address above as the source: `RESULT PASS` on each, with the same lines.
 
-Not run: ESLint, Prettier and the Cypress tests. No Docker image was built (there is none).
+Not run: ESLint, Prettier and the Cypress tests. No Docker image was built (there is none), and no Vercel build ran here: the server-hosting server above follows the provider's documented order for files and rewrites, it is not the provider.
 
 ## Still needs a real deploy
 
 - The static build on Tofu's Linux machine with Node 24, from `package-lock.json` (here macOS with Node 22).
-- A reload on `/home` or `/writer/<entry>` on the live address answering the app.
+- A copy in an account on a paid plan or the Pro trial, on server hosting: the build with `vercel.json`'s install command, and a reload on `/home` and `/writer/<entry>` answering the diary rather than a 404 page.
+- A reload on `/home` or `/writer/<entry>` on a Free-plan copy's live address answering the app.
 - The diary kept across visits in Safari on an iPhone and Chrome on Android, and "Add to Home Screen" there.
 - On a copy made by Tofu's gallery, the **Source code** link opening that copy's commit.
