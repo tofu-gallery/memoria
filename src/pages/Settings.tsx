@@ -1,5 +1,6 @@
 // Modified by Tofu on 2026-10-28 (AGPL-3.0 section 5): a paragraph that says where the
-// diary is kept, and a "Source code" link (src/sourceCode.ts).
+// diary is kept, and a "Source code" link (src/sourceCode.ts). The sync paragraph says the
+// CouchDB database is the owner's own and that a copy comes with none.
 import {
   IonBackButton,
   IonButtons,
@@ -156,7 +157,7 @@ const Settings: React.FC = () => {
 
           <p>
             {t(
-              "Memoria can connect to any CouchDB-compatible database. This is optional; the app works without a database connection. However, a backup is recommended.",
+              "If you run a CouchDB-compatible database of your own, Memoria can sync with it. This copy comes with none, and the diary works without one.",
             )}
           </p>
 
